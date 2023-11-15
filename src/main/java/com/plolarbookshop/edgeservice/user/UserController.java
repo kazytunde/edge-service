@@ -18,7 +18,7 @@ public class UserController {
 				oidcUser.getGivenName(),
 				oidcUser.getFamilyName(),
 				oidcUser.getEmail(),
-				List.of("employee", "customer")
+				oidcUser.getClaimAsStringList("roles")
 		);
 		return Mono.just(user);
 	}
